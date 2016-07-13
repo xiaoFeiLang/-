@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  九张
+//
+//  Created by loulou on 16/6/24.
+//  Copyright © 2016年 qxb. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "Masonry.h"
+#import "UIViewController+CustomerViewController.h"
+#define RGB(r,g,b)                  [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.f]
+#define RGBA(r,g,b,a)               [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a]
+#define FONT(_size_)                [UIFont systemFontOfSize:_size_]
+#define LOAD_IMAGE(name)            [UIImage imageNamed:name]
+#define LOAD_NIB(name)              [UINib nibWithNibName:name bundle:nil]
+#define LOAD_NIB_TO_FILE(name)      [[[NSBundle mainBundle] loadNibNamed:name owner:self options:nil] firstObject]
+#define WEAK_SELF                   __weak typeof(self) wself = self;
+#define screenW [UIScreen mainScreen].bounds.size.width
+#define screenH [UIScreen mainScreen].bounds.size.height
+//自动比例
+#define P_X(x)                  x / 640.f
+#define P_Y(y)                  y / 1136.f
+#define RC_X(x)                 P_X(x) * ([UIScreen mainScreen].bounds.size.width < 320.f ? 320.f : [UIScreen mainScreen].bounds.size.width)
+#define RC_Y(y)                 P_Y(y) * ([UIScreen mainScreen].bounds.size.height < 568.f ? 568.f : [UIScreen mainScreen].bounds.size.height)
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
